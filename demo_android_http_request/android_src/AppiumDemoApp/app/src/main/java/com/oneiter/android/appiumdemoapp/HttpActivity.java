@@ -1,6 +1,7 @@
 package com.oneiter.android.appiumdemoapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -56,7 +57,13 @@ public class HttpActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Map<String, String> item = (Map<String, String>) view.getTag();
-                Toast.makeText(HttpActivity.this.getApplicationContext(), item.get("name"), Toast.LENGTH_LONG).show();
+//                Toast.makeText(HttpActivity.this.getApplicationContext(), item.get("name"), Toast.LENGTH_LONG).show();
+                if (item.get("name").equals("with jsessionid request")) {
+
+                    Intent intent = new Intent();
+                    intent.setClass(HttpActivity.this, HttpClientWithCookieActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }

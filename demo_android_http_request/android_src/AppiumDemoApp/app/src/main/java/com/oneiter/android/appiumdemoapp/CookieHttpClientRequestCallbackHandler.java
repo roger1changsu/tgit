@@ -1,5 +1,7 @@
 package com.oneiter.android.appiumdemoapp;
 
+import android.content.SharedPreferences;
+
 import org.apache.http.HttpEntity;
 import org.json.JSONObject;
 
@@ -9,5 +11,6 @@ import org.json.JSONObject;
 public interface CookieHttpClientRequestCallbackHandler {
     public void onError();
 //    public void onSuccess(JSONObject respJsonObject, SingletonCookieStore singletonCookieStore);
-    public void onSuccess(HttpEntity httpRespEntity, SingletonCookieStore singletonCookieStore);
+//    public void onSuccess(HttpEntity httpRespEntity, SingletonCookieStore singletonCookieStore);
+    public void onSuccess(HttpEntity httpRespEntity, SharedPreferencesCookieStore sharedPreferencesCookieStore);
 }
